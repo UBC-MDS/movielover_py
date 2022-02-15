@@ -23,7 +23,7 @@ Kate is a movie enthusiast in the U.S. and she is interested in a broad range of
 
 With all these questions in mind, she find having a dashboard with plots and filter by genre and year is useful to answer them. When she logs on to the "movielover app", she can control the filter by genre(s) and year(s) of interest, the dashboard would then displays the following: 
 
-- A list of top 10 rated movie titles with ranking, rating, MPAA rating;
+- A list of top 10 rated movie titles with ranking, runtime, MPAA rating;
 - A bar chart of U.S. gross revenue by genre;
 - A scatterplot of U.S. gross revenue and movie runtime. 
 
