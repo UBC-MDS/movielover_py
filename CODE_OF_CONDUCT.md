@@ -34,7 +34,7 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior during a DSCI 532 group project event or in an online space outside of organised events, we ask that you report it to the Instructor(s). The current instructor(s) of DSCI 524 is(are) Tiffany Timbers. To report a DSCI 524 group project code of conduct violation that will not be seen by the instructor, the group meeting will be raised and depends on the discussion, reporting to the instructor(s).
+Instances of abusive, harassing, or otherwise unacceptable behavior during a DSCI 532 group project event or in an online space outside of organised events, we ask that you report it to the Instructor(s). The current instructor(s) of DSCI 532 is(are) Florencia D'Andrea. To report a DSCI 532 group project code of conduct violation that will not be seen by the instructor, the group meeting will be raised and depends on the discussion, reporting to the instructor(s).
 
 ## Attribution
 
