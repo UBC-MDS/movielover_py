@@ -4,15 +4,9 @@
 
 Our role: Data Analysts at a consulting firm
 
-Target Audience: Movie enthusiasts & Directors at Movie Production Companies
+Target Audience: Movie enthusiasts who enjoy researching movies
 
-Movie enthusiasts:
-
-Millions of movies are published on a variety of channels; however, filtering excellent movies could be time-consuming. If we could provide a list of popular movies based on customers' preference in genres and productions years, they will save a large amount of time on searching. To solve this challenge, we propose building a data visualization app that allows movie enthusiasts to visually present the top 10 ranking movies in a given year range or genre. Our app will visualize the selection process by providing a slider for the year range and dropdowns for genres. Eventually, detailed information (ranking, title, duration, MPAA ratings) of the top 10 movies will be rendered in a table format. 
-
-Directors at Movie Production Companies:
-
-The risk of investing in movies is similar to the risk of investing in financial assets. If we could help directors to understand the popularity and potential profits of a movie beforehand, the chance of a making profit-losing decision would be reduced drastically. To serve this purpose, we also propose adding two graphs to our app to provide comprehensive information regarding particular types of movies. Our app will illustrate the relationship between movie rating and duration through a scatter plot. Additionally, a bar chart will be provided to show revenue (in million USD) of movies from different genres in a given year range. 
+Millions of movies are published on a variety of channels; however, filtering excellent movies could be time-consuming. If we could provide a list of popular movies based on customers' preferences and illustrate approximation of box offices from different dimensions, they will save a large amount of time on searching for high-quality movies. To solve this challenge, we propose building a data visualization app that allows movie enthusiasts to explore the top 10 popular movies, box offices and other relevant information. Our app can be served as a great exploratory tool for people who like visualization and friendly-user-interface to extract various data at the same time with minimum efforts to select the filters.
 
 ## Description of the Data
 
