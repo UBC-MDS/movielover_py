@@ -10,8 +10,13 @@ Millions of movies are published on a variety of channels; however, filtering ex
 
 ## Description of the Data
 
-This "movies" dataset is from the [Vega Datasets][1] collection. 
-TBC
+This "movies" dataset is from the [Vega Datasets][1] collection. The dataset we are visualizing comes from the Vega dataset on Movies. The data was compiled by Vega to create a repository for example data to be used in their other packages as stated on their Vega Sources page.
+
+This dataset contains 3,200 movies with 16 variables for each movie. Due to the time restriction of this project, we will only be visualizing 7 variables after 1980.
+
+Five of the variables we will be analysing describe the movie attributes including the title of the movie (Title), the duration of the movie, which genre the movie belongs to (Major_Genre), MPAA-rating and the year when the movie was originally released (Release_Date).
+
+The other two variables describe the outcomes of the movie through ratings (IMDB_Ratings) or US gross revenue. The dataset contains ratings from different sources, but we chose to visualize IMDB_Rating as it has 600 more values in the dataset than Rotten Tomatoes and relies on audience reviews. We will take the US gross revenue to summarize the revenue for each movie.
 
 ## Research Questions and Usage Scenarios
 ### Research questions:
