@@ -10,7 +10,8 @@ Millions of movies are published on a variety of channels; however, filtering ex
 
 ## Description of the Data
 
-This "movies" dataset is from the [Vega Datasets][1] collection. The dataset we are visualizing comes from the Vega dataset on Movies. The data was compiled by Vega to create a repository for example data to be used in their other packages as stated on their Vega Sources page.
+This "movies" dataset is from the [Vega Datasets][1] collection. The data was compiled by Vega to create a repository for example data to be used in other packages as stated on the Vega Sources page.
+
 
 This dataset contains 3,200 movies with 16 variables for each movie. Due to the time restriction of this project, we will only be visualizing 7 variables after 1980.
 
