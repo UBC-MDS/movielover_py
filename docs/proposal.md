@@ -13,7 +13,8 @@ Millions of movies are published on a variety of channels; however, filtering ex
 This "movies" dataset is from the [Vega Datasets][1] collection. The data was compiled by Vega to create a repository for example data to be used in other packages as stated on the Vega Sources page.
 
 
-This dataset contains 3,200 movies with 16 variables for each movie. Due to the time restriction of this project, we will only be visualizing 7 variables after 1980.
+This dataset contains 3,200 movies with 16 variables for each movie. By filtering out relevant features based on the purpose of our app, we decide to interactively visualize 7 variables of the movies that were created after 1980.
+
 
 Five of the variables we will be analysing describe the movie attributes including the title of the movie (Title), the duration of the movie, which genre the movie belongs to (Major_Genre), MPAA-rating and the year when the movie was originally released (Release_Date).
 
