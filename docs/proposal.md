@@ -16,7 +16,8 @@ This "movies" dataset is from the [Vega Datasets][1] collection. The data was co
 This dataset contains 3,200 movies with 16 variables for each movie. By filtering out relevant features based on the purpose of our app, we decide to interactively visualize 7 variables of the movies that were created after 1980.
 
 
-Five of the variables we will be analysing describe the movie attributes including the title of the movie (Title), the duration of the movie, which genre the movie belongs to (Major_Genre), MPAA-rating and the year when the movie was originally released (Release_Date).
+There are five descriptive attributes of a movie including the title of a movie (Title), the duration of a movie (Running_Time_min), which genre the movie belongs to (Major_Genre), MPAA-rating and the year when the movie was originally released (Release_Date).
+
 
 The other two variables describe the outcomes of the movie through ratings (IMDB_Ratings) or US gross revenue. The dataset contains ratings from different sources, but we chose to visualize IMDB_Rating as it has 600 more values in the dataset than Rotten Tomatoes and relies on audience reviews. We will take the US gross revenue to summarize the revenue for each movie.
 
