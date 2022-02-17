@@ -19,7 +19,8 @@ This dataset contains 3,200 movies with 16 variables for each movie. By filterin
 There are five descriptive attributes of a movie including the title of a movie (Title), the duration of a movie (Running_Time_min), which genre the movie belongs to (Major_Genre), MPAA-rating and the year when the movie was originally released (Release_Date).
 
 
-The other two variables describe the outcomes of the movie through ratings (IMDB_Ratings) or US gross revenue. The dataset contains ratings from different sources, but we chose to visualize IMDB_Rating as it has 600 more values in the dataset than Rotten Tomatoes and relies on audience reviews. We will take the US gross revenue to summarize the revenue for each movie.
+The remaining two variables describe the popularity of a movie through ratings (IMDB_Ratings) and US gross revenue (US_Gross). The dataset contains ratings from two different sources, but we chose IMDB_Rating as it has fewer missing values than the Rotten Tomatoes rating. Additionally, we will use US Gross revenue as an approximation of the box office in North America.
+
 
 ## Research Questions and Usage Scenarios
 ### Research questions:
