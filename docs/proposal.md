@@ -1,3 +1,4 @@
+
 # Proposal
 
 ## Motivation and Purpose
@@ -42,4 +43,3 @@ With all these questions in mind, she find having a dashboard with plots and fil
 
 
 [1]: https://github.com/vega/vega-datasets
-
