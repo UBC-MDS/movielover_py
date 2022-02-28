@@ -3,7 +3,7 @@ import altair as alt
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-df = pd.read_csv("../data/clean/movies_clean_df.csv", index_col=0)
+df = pd.read_csv("data/clean/movies_clean_df.csv", index_col=0)
 genres = sorted(list(set(df["Major Genre"])))
 
 
