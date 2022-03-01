@@ -11,7 +11,6 @@ year = sorted(list(df["Year"].dropna().astype(str).unique()))
 
 default_genres = ["Action", "Adventure", "Comedy", "Drama", "Horror", "Romantic Comedy"]
 
-
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
