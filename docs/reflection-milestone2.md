@@ -6,17 +6,14 @@ The final version of the dashboard managed to answer all research questions that
 
 Filters:
 
-- slider - year range
-
-- checklist - movie genres
+- Slider: year range
+- Checklist: movie genres
 
 Outputs:
 
-- Bar chart - US revenue (box offices) for different movie genres
-
-- Scatter plot - the relationship between IMDB ratings and duration
-
-- Line chart - the trend of US revenue (box office)
+- Bar chart: US revenue (box offices) for different movie genres
+- Scatter plot: the relationship between IMDB ratings and duration
+- Line chart: the trend of US revenue (box office)
 
 ### Accomplishments
 
