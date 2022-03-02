@@ -5,7 +5,8 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 
 df = pd.read_csv("../data/clean/movies_clean_df.csv", index_col=0).rename(
-    columns={'Major Genre': 'Major_genre', 'Year': 'Year'}, inplace=False)
+    columns={'Major Genre': 'Major_genre',  
+    'IMDB Rating': 'IMDB_rating', 'Running Time min': 'Duration'}, inplace=False)
 
 genre = sorted(list(df["Major_genre"].dropna().unique()))
 year = sorted(list(df["Year"].dropna().astype(str).unique()))
@@ -60,48 +61,49 @@ app.layout = dbc.Container([
             ])
             ])
         ]),
-        #first plot
-        dbc.Col(html.Iframe(
-            #...
-        )),
-
-        #Second plot
-        dbc.Col(html.Iframe(
-            #...
-        ))
-        ]),
     html.Br(), 
-    # Bar plot at the bottom 
-    dbc.Row(
+    #plot graphs
+   dbc.Col(
         html.Iframe(
-            id='barchart',
+            id="plot_graphs",
             style={"display": "block",
                     "margin": "auto",
                     "overflow": " hidden", 
-                    "width" : "150%", "height":"500px"}))
+                    "width" : "200%", "height":"800px"}
+        ))
+        ])
 ])
 
 @app.callback(
-    Output('barchart', 'srcDoc'),
+    Output('plot_graphs', 'srcDoc'),
     Input('genre_checklist', 'value'),
     Input('year_range', 'value')
 )
 
-#bar plot function
-def plot_bar(genre, year_range):
+#plotting function
+def plot_graphs(genre, year_range):
     filter_genre = df[df.Major_genre.isin(genre)]
-    
+
     filter_data = filter_genre.query("Year >= @year_range[0] & Year <= @year_range[1] & Major_genre in @genre").dropna()
+    brush = alt.selection_interval()
     click = alt.selection_multi(fields=['Major_genre'])
+
+    scatter = alt.Chart(filter_data, title="IMDB Rating Vs. Duration (in mins)").mark_circle(opacity=0.7).encode(
+        x=alt.Y("IMDB_rating", title="IMDB Rating"),
+        y=alt.X("Duration", title="Duration (in mins)"),
+        color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
+        tooltip=alt.Tooltip(["IMDB_rating", "Duration"]),
+        opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush)
+
     bar = alt.Chart(filter_data, title='Gross revenue (box office) by genre').mark_bar().encode(
         x=alt.X('sum(US_Revenue)', axis=alt.Axis(title='Gross Revenue (in millions USD)')),
         y=alt.Y('Major_genre', axis=alt.Axis(title='Major genre')),
-        color=alt.Color('Major_genre', legend=None))
+        color=alt.Color('Major_genre'))
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
        tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click)
-    chart = barplot
+
+    chart = scatter & barplot
     return chart.to_html()
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
