@@ -12,6 +12,8 @@ This document (the README file) will provide general information about the app. 
 * [App Sketch](#app-sketch)
 * [Contribution](#contribution)
 * [How to Install and Run Locally](#how-to-install-and-run-locally)
+* [Set Up](#set-up)
+* [Run the Dashboard](#run-the-dashboard)
 * [Contributors](#contributors)
 
 ### Visualization App Purpose
