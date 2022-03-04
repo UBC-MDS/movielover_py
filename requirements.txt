@@ -3,5 +3,4 @@ gunicorn
 altair
 dash
 dash_bootstrap_components
-tkinter
 turtle
