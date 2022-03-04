@@ -38,7 +38,35 @@ Our app support interactivity between graphs. Detailed instruction as follows:
 
 ### Contribution
 
-We welcome all feedback and contributions. If you are interested in contributing to our app, please read our [contributing document](https://github.com/UBC-MDS/movielover_py/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/UBC-MDS/movielover_py/blob/main/CODE_OF_CONDUCT.md). Our [license](https://github.com/UBC-MDS/movielover_py/blob/main/LICENSE) outlines our permissions and copyright information for users.
+We welcome all feedback and contributions. If you are interested in contributing to our app, please read our [contributing document](https://github.com/UBC-MDS/movielover_py/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/UBC-MDS/movielover_py/blob/main/CODE_OF_CONDUCT.md). Our [license](https://github.com/UBC-MDS/movielover_py/blob/main/LICENSE) outlines our permissions and copyright information for users. You are welcomed to raise new ideas and report any existing bugs. 
+
+### How to install and run locally
+
+To run the dashboard locally, it is recommeded to use a virtual environment like [venv](https://docs.python.org/3/library/venv.html) or [Anaconda](https://www.anaconda.com/). For simplicity, we could demonstrate the installiation process with venv.
+
+### Set up
+
+Run the following command at the root directory of the project:
+
+```
+# Create the virtual environment
+python -m venv myenv
+
+# Activate the environment
+source myenv/bin/activate
+
+# Install the requirements
+pip install -r requirements.txt
+```
+
+### Run the dashboard
+
+```
+python src/app.py
+```
+
+The dashboard could then be accessed locally in <localhost:8050>, and you are good to go!
+
 
 ### Contributors
 
