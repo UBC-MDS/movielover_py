@@ -69,7 +69,7 @@ app.layout = dbc.Container([
             style={"display": "block",
                     "margin": "auto",
                     "overflow": " hidden", 
-                    "width" : "200%", "height":"800px"}
+                    "width" : "300%", "height":"800px"}
         ))
         ])
 ])
@@ -93,16 +93,34 @@ def plot_graphs(genre, year_range):
         y=alt.X("Duration", title="Duration (in mins)"),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
         tooltip=alt.Tooltip(["IMDB_rating", "Duration"]),
-        opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush)
+        opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush).properties(
+        width=250,
+        height=200
+    )
 
     bar = alt.Chart(filter_data, title='Gross revenue (box office) by genre').mark_bar().encode(
         x=alt.X('sum(US_Revenue)', axis=alt.Axis(title='Gross Revenue (in millions USD)')),
         y=alt.Y('Major_genre', axis=alt.Axis(title='Major genre')),
         color=alt.Color('Major_genre'))
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
-       tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click)
+       tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click).properties(
+        width=550,
+        height=200
 
-    chart = scatter & barplot
+    )
+
+    line = alt.Chart(filter_data, title="Average revenue (box office) by genre").mark_line(point=True).encode(
+        y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)')),
+        x=alt.X("Year:O", axis=alt.Axis(title="Year")),
+        color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
+        tooltip=alt.Tooltip('mean(US_Revenue)', format="$,.0f"),
+        opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush).properties(
+        width=250,
+        height=200
+    )
+
+    chart = (scatter | line) & barplot
+
     return chart.to_html()
 
 if __name__ == '__main__':
