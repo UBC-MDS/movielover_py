@@ -65,7 +65,9 @@ pip install -r requirements.txt
 python src/app.py
 ```
 
-The dashboard could then be accessed locally in <localhost:8050>, and you are good to go!
+The dashboard could then be accessed locally in <localhost:8050>. 
+
+*Tips for dashboard first-time users: you might see something similar to `Dash is running on http://127.0.0.1:8050/` after running the command above, by simply copying and pasting `http://127.0.0.1:8050/` to a browser, you will be able to view the dashboard. If you keep the dashboard open, the page will automatically refresh whenever you make additional error-free changes.* 
 
 
 ### Contributors
