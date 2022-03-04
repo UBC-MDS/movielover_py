@@ -1,4 +1,5 @@
 from tkinter.ttk import Style
+from turtle import width
 from dash import Dash, html, dcc, Input, Output
 import altair as alt
 import dash_bootstrap_components as dbc
@@ -22,6 +23,7 @@ app.layout = dbc.Container([
         style={"backgroundColor": "#94e1f2"})),
     html.Br(),
    dbc.Row([
+       #first column with narrower width
        dbc.Col([
            #Slider and checklist
            dbc.Card([
@@ -41,13 +43,15 @@ app.layout = dbc.Container([
                 step=1,
                 min=1980,
                 max=2016,
-                value=[2000, 2005],
+                value=[1990, 2005],
+                tooltip={"placement": "bottom", "always_visible": True},
                 marks={1980: {"label": "1980"}, 2016: {"label": "2016"}}
                 ),
+            #break between slider and checklist
+            html.Br(),
             html.Br(),
             html.Div(html.P("Select the movie genre"),
             style={'text_aligh': 'left', 'color': '#0f3c63', 'font-family': 'sans-serif'}),
-            html.Br(),
             dcc.Checklist(
                 id="genre_checklist",                    
                 className="genre-container",
@@ -60,11 +64,12 @@ app.layout = dbc.Container([
             ])
             ])
             ])
-        ]),
+        ], width=3),
     html.Br(), 
-    #plot graphs
-   dbc.Col(
+    #second column
+    dbc.Col(
         html.Iframe(
+            #three plots 
             id="plot_graphs",
             style={"display": "block",
                     "margin": "auto",
@@ -101,7 +106,8 @@ def plot_graphs(genre, year_range):
     bar = alt.Chart(filter_data, title='Gross revenue (box office) by genre').mark_bar().encode(
         x=alt.X('sum(US_Revenue)', axis=alt.Axis(title='Gross Revenue (in millions USD)')),
         y=alt.Y('Major_genre', axis=alt.Axis(title='Major genre')),
-        color=alt.Color('Major_genre'))
+        color=alt.Color('Major_genre', legend=alt.Legend(title='Genres')))
+
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
        tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click).properties(
         width=550,
@@ -119,7 +125,12 @@ def plot_graphs(genre, year_range):
         height=200
     )
 
-    chart = (scatter | line) & barplot
+    chart = ((scatter | line) & barplot).configure_axis(
+        labelFontSize=12, 
+        titleFontSize=14).configure_legend(
+            titleFontSize=16
+            ).configure_title(
+                fontSize= 20)
 
     return chart.to_html()
 
