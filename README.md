@@ -11,7 +11,7 @@ This document (the README file) will provide general information about the app. 
 * [App Description](#app-description)
 * [App Sketch](#app-sketch)
 * [Contribution](#contribution)
-* [How to Install and Run locally](#how-to-install-and-run-locally)
+* [How to Install and Run Locally](#how-to-install-and-run-locally)
 * [Contributors](#contributors)
 
 ### Visualization App Purpose
