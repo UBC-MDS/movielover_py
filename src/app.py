@@ -23,6 +23,7 @@ app.layout = dbc.Container([
         style={"backgroundColor": "#94e1f2"})),
     html.Br(),
    dbc.Row([
+       #first column with narrower width
        dbc.Col([
            #Slider and checklist
            dbc.Card([
@@ -46,6 +47,7 @@ app.layout = dbc.Container([
                 tooltip={"placement": "bottom", "always_visible": True},
                 marks={1980: {"label": "1980"}, 2016: {"label": "2016"}}
                 ),
+            #break between slider and checklist
             html.Br(),
             html.Br(),
             html.Div(html.P("Select the movie genre"),
@@ -64,9 +66,10 @@ app.layout = dbc.Container([
             ])
         ], width=3),
     html.Br(), 
-    #plot graphs
-   dbc.Col(
+    #second column
+    dbc.Col(
         html.Iframe(
+            #three plots 
             id="plot_graphs",
             style={"display": "block",
                     "margin": "auto",
@@ -125,10 +128,9 @@ def plot_graphs(genre, year_range):
     chart = ((scatter | line) & barplot).configure_axis(
         labelFontSize=12, 
         titleFontSize=14).configure_legend(
-    titleFontSize=16
-).configure_title(
-    fontSize= 20
-)
+            titleFontSize=16
+            ).configure_title(
+                fontSize= 20)
 
     return chart.to_html()
 
