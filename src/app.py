@@ -105,7 +105,8 @@ def plot_graphs(genre, year_range):
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
        tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click).properties(
         width=550,
-        height=180
+        height=200
+
     )
 
     line = alt.Chart(filter_data, title="Average revenue (box office) by genre").mark_line(point=True).encode(
