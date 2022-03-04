@@ -106,7 +106,8 @@ def plot_graphs(genre, year_range):
         y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)')),
         x=alt.X("Year:O", axis=alt.Axis(title="Year")),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
-        tooltip=alt.Tooltip('mean(US_Revenue)', format="$,.0f")).add_selection(click)
+        tooltip=alt.Tooltip('mean(US_Revenue)', format="$,.0f"),
+        opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush)
 
     chart = (scatter | line) & barplot
 
