@@ -42,7 +42,7 @@ We welcome all feedback and contributions. If you are interested in contributing
 
 ### How to install and run locally
 
-To run the dashboard locally, it is recommeded to use a virtual environment like [venv](https://docs.python.org/3/library/venv.html) or [Anaconda](https://www.anaconda.com/). For simplicity, we could demonstrate the installiation process with venv.
+To run the dashboard locally, it is recommended to use a virtual environment like [venv](https://docs.python.org/3/library/venv.html). The installation process with venv is demonstrated below.
 
 ### Set up
 
