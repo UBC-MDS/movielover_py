@@ -20,7 +20,7 @@ The full proposal can be found in [our proposal file](https://github.com/UBC-MDS
 
 ### Usage Instructions
 
-To visit our deployed dashboard on Heroku, please visit the [link](https://dsci532-group21-movielover.herokuapp.com/).
+To visit our deployed dashboard on **Heroku**, please visit the [link](https://dsci532-group21-movielover.herokuapp.com/).
 
 Users can select year range and multiple genres in the sidebar to filter out movie data to visualize in the dashboard. The dashboard contains three graphics (bar chart, line chart and scatterplot). A detailed introduction to the graphics can be found in the followed section.
 
