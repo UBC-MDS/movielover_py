@@ -39,7 +39,8 @@ With all these questions in mind, she find having a dashboard with plots and fil
 
 - A line chart of U.S. gross revenue by genre against year;
 - A bar chart of U.S. gross revenue by genre;
-- A scatterplot of U.S. gross revenue and movie runtime.
+- A scatterplot of rating and movie runtime.
+
 
 
 
