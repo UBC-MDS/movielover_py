@@ -34,7 +34,7 @@ Our app support interactivity between graphs. Detailed instruction as follows:
 
 ### App Sketch  
 
-![](img/sketch_v2.png)
+![](img/sketch.png)
 
 ### Contribution
 
