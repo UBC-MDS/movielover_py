@@ -1,5 +1,7 @@
 # movielover_py
 
+To visit our deployed dashboard on **Heroku**, please visit the [link](https://dsci532-group21-movielover.herokuapp.com/).
+
 Hello!🍺  Bonjour! 🎉  Hola！👋  你好！🎆  Thanks for visiting the dashboard of movie information for movie enthusiasts!!
 
 This document (the README file) will provide general information about the app. You can select one of the following options for a specific section!
@@ -18,8 +20,6 @@ Millions of movies are published on a variety of channels; however, filtering ex
 The full proposal can be found in [our proposal file](https://github.com/UBC-MDS/movielover_py/blob/main/docs/proposal.md).
 
 ### Usage Instructions
-
-To visit our deployed dashboard on **Heroku**, please visit the [link](https://dsci532-group21-movielover.herokuapp.com/).
 
 Users can select year range and multiple genres in the sidebar to filter out movie data to visualize in the dashboard. The dashboard contains three graphics (bar chart, line chart and scatterplot). A detailed introduction to the graphics can be found in the followed section.
 
