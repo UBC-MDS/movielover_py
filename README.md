@@ -1,8 +1,8 @@
 # movielover_py
 
-Hello!🍺  Bonjour! 🎉  Hola！👋  你好！🎆  Thanks for visiting the dashboard of movie information for movie enthusiast!!
+Hello!🍺  Bonjour! 🎉  Hola！👋  你好！🎆  Thanks for visiting the dashboard of movie information for movie enthusiasts!!
 
-This document (the README file) will provide general information about the app. You can select one of the following option to a specific section!
+This document (the README file) will provide general information about the app. You can select one of the following options for a specific section!
  
 * [Visualization App Purpose](#visualization-app-purpose)
 * [Usage Instructions](#usage-instructions)
@@ -22,11 +22,11 @@ The full proposal can be found in [our proposal file](https://github.com/UBC-MDS
 
 To visit our deployed dashboard on Heroku, please visit the [link](https://dsci532-group21-movielover.herokuapp.com/).
 
-Users can select year range and multiple genres in the side bar to filter out movie data to visualize in the dashboard. The dashboard contains three graphics (bar chart, line chart and scatterplot). Detailed introduction about the graphics can be found in the followed section.
+Users can select year range and multiple genres in the sidebar to filter out movie data to visualize in the dashboard. The dashboard contains three graphics (bar chart, line chart and scatterplot). A detailed introduction to the graphics can be found in the followed section.
 
 Our app support interactivity between graphs. Detailed instruction as follows:
-- Bar chart: Total US revenue of a movie genre will be shown by hovering over the bar. Also, users can click a genre to make it highlighted and other two graphs will change automatically to specify a genre as well.
-- Line chart: Average US revenue of a movie genre in the year will be shown by hovering over the point on the line. Morover, users can select an interval to highlight a more specified period.
+- Bar chart: Total US revenue of a movie genre will be shown by hovering over the bar. Also, users can click a genre to make it highlighted and the other two graphs will change automatically to specify a genre as well.
+- Line chart: Average US revenue of a movie genre in the year will be shown by hovering over the point on the line. Moreover, users can select an interval to highlight a more specified period.
 - Scatter plot: IMDB rating and duration of a movie will be shown by hovering over the point. Interval selection is also supported in the scatterplot to serve presentation needs. 
 
 ### App Description
