@@ -1,10 +1,18 @@
 # movielover_py
 
-Dashboard of movie information for movie enthusiast
+Welcome! 🎉 Willkommen! 🎊 Bienvenue! 👋 你好！Thanks for visiting the dashboard of movie information for movie enthusiast!!
+
+This document (the README file) will provide general information about the app. You can select one of the following option to a specific section!
+
+* [Visualization App Purpose](#visualization-app-purpose)
+* [App Description](#app-description)
+* [App Sketch](#app-sketch)
+* [Contribution](#contribution)
+* [Contributors](#contributors)
 
 ### Visualization App Purpose
 
-The full proposal can be found in [our proposal file](https://github.com/UBC-MDS/movielover_py/blob/main/docs/proposal.md).
+To visit our deployed dashboard on Heroku, The full proposal can be found in [our proposal file](https://github.com/UBC-MDS/movielover_py/blob/main/docs/proposal.md).
 
 ### App Description
 
