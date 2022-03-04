@@ -46,7 +46,7 @@ To run the dashboard locally, it is recommeded to use a virtual environment like
 
 ### Set up
 
-Run the following command at the root directory of the project:
+Run the following command at the **root** directory of the project in the terminal:
 
 ```
 # Create the virtual environment
