@@ -23,7 +23,6 @@ Clone this repo and run this app using Docker with the following commands:
 ```bash
 git clone git@github.com:UBC-MDS/movielover_py.git
 cd movielover_py
-docker-compose build
 docker-compose up
 ```
 Open the app in the following URL http://localhost:8000/
