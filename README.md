@@ -16,6 +16,19 @@ This document (the README file) will provide general information about the app. 
 * [Run the Dashboard](#run-the-dashboard)
 * [Contributors](#contributors)
 
+### Run the app locally
+
+Clone this repo and run this app using Docker with the following commands:
+
+```bash
+git clone git@github.com:UBC-MDS/movielover_py.git
+cd movielover_py
+docker-compose build
+docker-compose up
+```
+Open the app in the following URL http://localhost:8000/
+
+
 ### Visualization App Purpose
 
 Millions of movies are published on a variety of channels; however, filtering excellent movies could be time-consuming. If we could provide a list of popular movies based on customers' preferences and illustrate approximation of box offices from different dimensions, they will save a large amount of time on searching for high-quality movies. To solve this challenge, we propose building a data visualization app that allows movie enthusiasts to explore the top 10 popular movies, box offices and other relevant information. Our app can be served as a great exploratory tool for people who like visualization and friendly-user-interface to extract various data at the same time with minimum efforts to select the filters.
