@@ -92,7 +92,7 @@ def plot_graphs(genre, year_range):
     brush = alt.selection_interval()
     click = alt.selection_multi(fields=['Major_genre'])
 
-    scatter = alt.Chart(filter_data, title="IMDB Rating Vs. Duration (in mins)").mark_circle(opacity=0.7).encode(
+    scatter = alt.Chart(filter_data, title="IMDB Rating Vs. Duration (in mins)").mark_circle(opacity=0.5).encode(
         x=alt.Y("IMDB_rating", title="IMDB Rating"),
         y=alt.X("Duration", title="Duration (in mins)"),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
@@ -102,9 +102,9 @@ def plot_graphs(genre, year_range):
         height=200
     )
 
-    bar = alt.Chart(filter_data, title='Gross revenue (box office) by genre').mark_bar().encode(
+    bar = alt.Chart(filter_data, title='Gross Revenue By Genre (box office)').mark_bar().encode(
         x=alt.X('sum(US_Revenue)', axis=alt.Axis(title='Gross Revenue (in millions USD)')),
-        y=alt.Y('Major_genre', axis=alt.Axis(title='Major genre')),
+        y=alt.Y('Major_genre', axis=alt.Axis(title='Major Genre')),
         color=alt.Color('Major_genre', legend=alt.Legend(title='Genres')))
 
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
@@ -114,7 +114,7 @@ def plot_graphs(genre, year_range):
 
     )
 
-    line = alt.Chart(filter_data, title="Average revenue (box office) by genre").mark_line(point=True).encode(
+    line = alt.Chart(filter_data, title="Average Revenue By Genre (box office)").mark_line(point=True).encode(
         y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)')),
         x=alt.X("Year:O", axis=alt.Axis(title="Year")),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
@@ -124,7 +124,7 @@ def plot_graphs(genre, year_range):
         height=200
     )
 
-    chart = ((scatter | line) & barplot).configure_axis(
+    chart = ((scatter | barplot) & line).configure_axis(
         labelFontSize=12, 
         titleFontSize=14).configure_legend(
             titleFontSize=16
