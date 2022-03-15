@@ -3,7 +3,7 @@ import altair as alt
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-df = pd.read_csv("../data/clean/movies_clean_df.csv", index_col=0).rename(
+df = pd.read_csv("data/clean/movies_clean_df.csv", index_col=0).rename(
     columns={'Major Genre': 'Major_genre',
              'IMDB Rating': 'IMDB_rating', 'Running Time min': 'Duration'}, inplace=False)
 
