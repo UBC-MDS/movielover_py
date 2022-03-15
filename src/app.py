@@ -1,9 +1,10 @@
-from dash import Dash, html, dcc, Input, Output
+from tkinter.ttk import Style
+from dash import Dash, html, dcc, Input, Output, State
 import altair as alt
 import dash_bootstrap_components as dbc
 import pandas as pd
 
-df = pd.read_csv("data/clean/movies_clean_df.csv", index_col=0).rename(
+df = pd.read_csv("../data/clean/movies_clean_df.csv", index_col=0).rename(
     columns={'Major Genre': 'Major_genre',  
     'IMDB Rating': 'IMDB_rating', 'Running Time min': 'Duration'}, inplace=False)
 
@@ -17,9 +18,45 @@ server = app.server
 
 app.layout = dbc.Container([
     dbc.Row(
-        html.Div(html.Pre(children="Movie Lover",
-            style={"text-aligh":"left", "font-size":"300%", "color":"black", 'margin-left': '0px'}),
-        style={"backgroundColor": "#94e1f2"})),
+        #Title
+        html.Div([
+            html.Pre(
+                children="Movie Lover",
+                style={"text-aligh":"left", "font-size":"300%", "color":"black", 'margin-left': '0px'}
+            ),
+            html.P(
+                "An Interactive Movie Information Dashboard", 
+                style={'color': '#20314a', 'fontSize': 17, 'text-align':'left', 'fontStyle':'italic' }
+            )
+            ],
+        style={"backgroundColor": "#b1d0fc"})
+        ),
+        html.Br(),
+    dbc.Row([
+        dbc.Col(),
+        dbc.Col([
+        dbc.Button(
+                "Tips", id='popover-target', color = 'secondary', size="md"
+            ),
+            dbc.Popover(
+                [
+                    dbc.PopoverHeader('plot interactions:'),
+                    dbc.PopoverBody(
+                        dcc.Markdown(
+                    """
+                        1. Hover over the scatter points to see detailed rating values and duration.
+                        2. Click on any of the bar to see highlighted information of a genre.
+                        3. Click on the white area in the bar plot to exit the highlight mode.
+                        4. Click and drag on the line plot to create movable selection region.
+                        5. Click on the white area in the line plot to disregard the selected region"""
+                    ))
+                ],
+                id = 'popover',
+                target='popover-target',
+                placement='bottom',
+                is_open=False
+            )], width=1),
+    ]),
     html.Br(),
    dbc.Row([
        #first column with narrower width
@@ -60,6 +97,13 @@ app.layout = dbc.Container([
                 value=default_genres,
                 labelStyle={"display":"block",
                             "margin-left": "30px"}),
+            html.Br(),
+            html.Hr(),
+            html.Div([
+        html.P("About:", style={'text_aligh': 'left', 'color': 'charcol', 'font-family': 'sans-serif'}), 
+        dcc.Markdown("Contributors of this dashboard: Adrianne Leung, Linhan Cai, Junrong Zhu, Zack Tang. The source code can be found [Here](https://github.com/UBC-MDS/movielover_py/blob/main/src/app.py). Detailed information about wrangled data, dashboard purpose and how to contribution can be retrieved from Github [repository](https://github.com/UBC-MDS/movielover_py). The original dataset is from [Vega Dataset](https://github.com/vega/vega-datasets).",
+        style={'color': 'charcol', 'fontSize': 14, 'text-align':'left'})
+            ])
             ])
             ])
             ])
@@ -74,9 +118,11 @@ app.layout = dbc.Container([
                     "margin": "auto",
                     "overflow": " hidden", 
                     "width" : "300%", "height":"800px"}
-        ))
-        ])
+        ),
+        )
+        ]),
 ])
+
 
 @app.callback(
     Output('plot_graphs', 'srcDoc'),
@@ -92,14 +138,14 @@ def plot_graphs(genre, year_range):
     brush = alt.selection_interval()
     click = alt.selection_multi(fields=['Major_genre'])
 
-    scatter = alt.Chart(filter_data, title="IMDB Rating Vs. Duration (in mins)").mark_circle(opacity=0.5).encode(
+    scatter = alt.Chart(filter_data, title="IMDB Rating Vs. Duration (in mins)").mark_circle(opacity=0.3).encode(
         x=alt.Y("IMDB_rating", title="IMDB Rating"),
         y=alt.X("Duration", title="Duration (in mins)"),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
         tooltip=alt.Tooltip(["IMDB_rating", "Duration"]),
         opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush).properties(
-        width=250,
-        height=200
+        width=350,
+        height=320
     )
 
     bar = alt.Chart(filter_data, title='Gross Revenue By Genre (box office)').mark_bar().encode(
@@ -109,19 +155,19 @@ def plot_graphs(genre, year_range):
 
     barplot = bar.encode(opacity=alt.condition(click, alt.value(0.9), alt.value(0.1)),
        tooltip=alt.Tooltip('sum(US_Revenue)', format="$,.0f")).add_selection(click).properties(
-        width=550,
-        height=200
+        width=350,
+        height=320
 
     )
 
     line = alt.Chart(filter_data, title="Average Revenue By Genre (box office)").mark_line(point=True).encode(
-        y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)')),
-        x=alt.X("Year:O", axis=alt.Axis(title="Year")),
+        y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)', format='$.0f')),
+        x=alt.X("Year", axis=alt.Axis(title="Year", format='.0f')),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
         tooltip=alt.Tooltip('mean(US_Revenue)', format="$,.0f"),
         opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush).properties(
-        width=250,
-        height=200
+        width=800,
+        height=320
     )
 
     chart = ((scatter | barplot) & line).configure_axis(
@@ -132,6 +178,19 @@ def plot_graphs(genre, year_range):
                 fontSize= 20)
 
     return chart.to_html()
+
+#callback for popover
+@app.callback(
+    Output('popover', 'is_open'),
+    [Input('popover-target', 'n_clicks')],
+    [State('popover', 'is_open')]
+    )
+
+#popoverfunction
+def toggle_popover(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 if __name__ == '__main__':
     app.run_server(debug=True)
