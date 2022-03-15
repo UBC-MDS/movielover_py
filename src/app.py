@@ -162,9 +162,9 @@ def plot_graphs(genre, year_range):
 
     line = alt.Chart(filter_data, title="Average Revenue By Genre (box office)").mark_line(point=True).encode(
         y=alt.Y("mean(US_Revenue)", axis=alt.Axis(title='Average Revenue (in millions USD)', format='$.0f')),
-        x=alt.X("Year", axis=alt.Axis(title="Year")),
+        x=alt.X("Year", axis=alt.Axis(title="Year", format='.0f')),
         color=alt.condition(brush, 'Major_genre', alt.value('lightgray')),
-        tooltip=alt.Tooltip('mean(US_Revenue)'),
+        tooltip=alt.Tooltip('mean(US_Revenue)', format="$,.0f"),
         opacity=alt.condition(click, alt.value(0.9), alt.value(0.1))).add_selection(brush).properties(
         width=800,
         height=320
