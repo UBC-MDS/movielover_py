@@ -44,7 +44,7 @@ Our app support interactivity between graphs. Detailed instruction as follows:
 * Line chart: Average US revenue of a movie genre in the year will be shown by hovering over the point on the line. Moreover, users can select an interval to highlight a more specified period.
 * Scatter plot: IMDB rating and duration of a movie will be shown by hovering over the point. Interval selection is also supported in the scatterplot to serve presentation needs.
 
-Brief instruction of interactivity can be also found by clicking the popover button on the top right of the dashboard!
+Brief instruction of interactivity can be also found by clicking the popover button ("Tips") on the top right of the dashboard!
 
 ### App Description
 
