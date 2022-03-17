@@ -48,7 +48,7 @@ Brief instruction of interactivity can be also found by clicking the popover but
 
 ### App Description
 
-`Movie Lover` is a dashboard designed to help movie enthusiasts explore various information (depending on the filter constraints) about movies, such as the US gross revenue for different movies genres (in the bar chart), the relationship between runtime and rating (in the scatter plot), as well as trends of average gross revenue by genres in selected year range (in the line chart). Users can filter out the movies' release years using the slider bar underneath the landing page's title. Underneath the slider, there is a click box, where users can select the movies genres they are interested in. The bar chart and scatter plot will be shown on the right side above the line chart. A brief introduction regarding contributors and relevant links are positioned under movie criterions.
+`Movie Lover` is a dashboard designed to help movie enthusiasts explore various information (depending on the filter constraints) about movies, such as the US gross revenue for different movies genres (in the bar chart), the relationship between runtime and rating (in the scatter plot), as well as trends of average gross revenue by genres in selected year range (in the line chart). Users can filter out the movies' release years using the slider bar underneath the landing page's title. Underneath the slider, there is a click box, where users can select the movies genres they are interested in. The bar chart and scatter plot will be shown on the right side above the line chart. A brief introduction including relevant links to source files and contributors is positioned under the slider in the sidebar.
 
 ### App Sketch  
 
