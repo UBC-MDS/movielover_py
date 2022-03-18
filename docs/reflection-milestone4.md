@@ -20,7 +20,7 @@
 ### Limitations and future improvements
 
 - Minor finetuning to the background color and overall web aesthetic design could be done (eg. aligning color themes for DashPy and DashR). 
-- We agree with one of the comments from peer review that the app does not provide a list of movies based on users' genre preference that a movie enthusiast would be interested in. We could add a tab feature to display more plots or tables to avoid crowding. (eg. A new tab `Top 10 movies` for user to pick a genre from a dropdown filter and show a table of top 10 movie titles).
+- We agree with one of the peer review comments that the app does not provide a list of movies based on users' genre preference, of which a movie enthusiast would be interested in. We could add a tab feature to display more plots or tables to avoid crowding. (eg. A new tab `Top 10 movies` for user to pick a genre from a dropdown filter and show a table of top 10 movie titles).
 - There is a simple tips box on interactivity but for those who are not familiar with online tools, we could provide a link to a step-by-step user guide.
 - DashPy can be finetuned to allow exporting individual plots instead of all three together for more flexibility.
 - For future development, we may consider adding a couple of advanced graphics as optional plots, which provide more information to different users.
