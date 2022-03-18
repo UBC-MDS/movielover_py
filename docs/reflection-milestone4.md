@@ -3,7 +3,7 @@
 
 ### Accomplishments of dashboard deliverables
 
-- Both the DashPy and DashR dashboard displays 3 intuitive illustrations, including a scatter plot, bar chart and line chart. As mentioned in the peer review, the app is clean and intuitive to use. The filtering options are straightforward to control with a range slider and checklist. Therefore, massive statistical, coding knowledge or extensive industry background are not necessarily required for using the app.
+- Both the DashPy and DashR dashboards display 3 intuitive illustrations, including a scatter plot, bar chart and line chart. As mentioned in the peer review, the app is clean and intuitive to use. The filtering options are straightforward to control with a range slider and checklist. Therefore, massive statistical, coding knowledge or extensive industry background are not necessarily required for using the app.
 - For DashPy, the 3 graphs are tightly linked to each other as the app supports various interactivity. It provides flexibility to present different characteristics of each selected genre.
 - The usage instructions in the tip box are simple and intuitive.
 - The app was deployed on Heroku. So, other users are welcome to use the app for their purpose by accessing the webserver.
