@@ -25,7 +25,7 @@ After we wrangled the data, it has six features including:
 * `IMDB Rating`: Rating of each movie
 * `MPAA Rating`: It contains 6 categorie (R, PG_13, G, NC-17, PG, and Not Rated)
 
-The dataset contains ratings from two different sources, but we chose IMDB_Rating as it has fewer missing values than the Rotten Tomatoes rating (it has only 2321 observation VS. IMDB_Rating has 2988 examples.). Additionally, we will use US Gross revenue as an approximation of the box office in North America.
+The dataset contains ratings from two different sources, but we chose IMDB_Rating as it has fewer missing values than the Rotten Tomatoes rating (it has only 2321 observation VS. IMDB_Rating has 2988 examples.). Additionally, the dataset contains US Gross revenue (as an approximation of the box office) in North America, hence users who are interested in box office information might find our dashboard useful. can explore. Given that our data is in resonable size, the dashboard can be quickly loaded and maintain a good user experience.
 
 ## Research Questions and Usage Scenarios
 
