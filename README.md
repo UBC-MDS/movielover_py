@@ -6,18 +6,44 @@ Hello!🍺  Bonjour! 🎉  Hola！👋  你好！🎆  Thanks for visiting the d
 
 This document (the README file) will provide general information about the app. You can select one of the following options for a specific section!
 
-* [Run the app locally](#run-the-app-locally)
+* [How to Install and Run Locally](#how-to-install-and-run-locally)
 * [Visualization App Purpose](#visualization-app-purpose)
 * [Usage Instructions](#usage-instructions)
 * [App Description](#app-description)
 * [App Sketch](#app-sketch)
 * [Contribution](#contribution)
-* [How to Install and Run Locally](#how-to-install-and-run-locally)
-* [Set Up](#set-up)
-* [Run the Dashboard](#run-the-dashboard)
 * [Contributors](#contributors)
 
-### Run the app locally
+### How to install and run locally
+
+To run the dashboard locally, it is recommended to use a virtual environment like [venv](https://docs.python.org/3/library/venv.html). The installation process with venv as well as two different approaches to run the app are demonstrated below:
+
+#### Set up
+
+Run the following command at the **root** directory of the project in the terminal:
+
+```
+# Create the virtual environment
+python -m venv myenv
+
+# Activate the environment
+source myenv/bin/activate
+
+# Install the requirements
+pip install -r requirements.txt
+```
+
+#### Run the dashboard locally
+
+```
+python src/app.py
+```
+
+The dashboard could then be accessed locally in <localhost:8050>.
+
+*Tips for dashboard first-time users: you might see something similar to `Dash is running on http://127.0.0.1:8050/` after running the command above, by simply copying and pasting `http://127.0.0.1:8050/` to a browser, you will be able to view the dashboard. If you keep the dashboard open, the page will automatically refresh whenever you make additional error-free changes.*
+
+#### Run the app using Docker
 
 Clone this repo and run this app using Docker with the following commands:
 
@@ -58,34 +84,6 @@ Brief instruction of interactivity can be also found by clicking the popover but
 
 We welcome all feedback and contributions. If you are interested in contributing to our app, please read our [contributing document](https://github.com/UBC-MDS/movielover_py/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/UBC-MDS/movielover_py/blob/main/CODE_OF_CONDUCT.md). Our [license](https://github.com/UBC-MDS/movielover_py/blob/main/LICENSE) outlines our permissions and copyright information for users. You are welcomed to raise new ideas and report any existing bugs.
 
-### How to install and run locally
-
-To run the dashboard locally, it is recommended to use a virtual environment like [venv](https://docs.python.org/3/library/venv.html). The installation process with venv is demonstrated below.
-
-### Set up
-
-Run the following command at the **root** directory of the project in the terminal:
-
-```
-# Create the virtual environment
-python -m venv myenv
-
-# Activate the environment
-source myenv/bin/activate
-
-# Install the requirements
-pip install -r requirements.txt
-```
-
-### Run the dashboard
-
-```
-python src/app.py
-```
-
-The dashboard could then be accessed locally in <localhost:8050>.
-
-*Tips for dashboard first-time users: you might see something similar to `Dash is running on http://127.0.0.1:8050/` after running the command above, by simply copying and pasting `http://127.0.0.1:8050/` to a browser, you will be able to view the dashboard. If you keep the dashboard open, the page will automatically refresh whenever you make additional error-free changes.*
 
 ### Contributors
 
